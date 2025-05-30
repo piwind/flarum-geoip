@@ -19,7 +19,7 @@ export default function extendBanIPModal() {
 
       for (const child of formGroup.children) {
         const label = child.children.find((e) => e?.tag === 'label');
-        const code = label && label.children.find((e) => e?.tag === 'code');
+        const code = label && label.children.find((e) => e?.tag === 'span');
 
         const codeIndex = code && label.children.indexOf(code);
         if (!code) continue;

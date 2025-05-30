@@ -23,7 +23,7 @@ export default function extendIpAddress() {
         <span className="ip-info">
           {image}
           <Tooltip text={`${description} ${threat ? `(${threat})` : ''}`}>
-            <code>{this.ip}</code>
+            <span>{this.ip}</span>
           </Tooltip>
         </span>,
         100
