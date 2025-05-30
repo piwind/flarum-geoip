@@ -1,7 +1,7 @@
 piwind-geoip:
   admin:
     permissions:
-      see_country: Always display the country of the IP address
+      see_country: Display the country next to the IP address
     settings:
       general:
         heading: General Settings
@@ -9,7 +9,7 @@ piwind-geoip:
       providers:
         heading: IP Lookup Service
         help: "Choose a service to use for IP lookups. Some services have rate limits, so be sure to check the service's documentation for more information."
-      service_label: Service
+      service_label: Service Provider
 
       service_ipdata_label: IPData
       service_ipdata_description: Use <b>https://ipdata.co</b> to make up to 1,500 lookups daily for free. Paid plans for higher usage limits are also available.
@@ -29,8 +29,8 @@ piwind-geoip:
       access_key_label: Access Key
       quota_label: Lookup quota
 
-      show_flag_label: Show country flag for each post
-      show_flag_help: Without disclosing the IP address, show the country flag of the IP address of the post author, when the user opts in via their preferences.
+      show_flag_label: Allow users to show country flags
+      show_flag_help: Add a privacy setting in user preferences "Show the flag of the country associated with the IP address when posting". If enabled, the flag will be shown without revealing the IP address.
 
   forum:
     alerts:
@@ -52,7 +52,7 @@ piwind-geoip:
       not_enough_data: "Not enough data to draw a map"
     user:
       settings:
-        ip_country: Show the flag of the country I post from, based on my IP address
+        ip_country: Show the flag of the country associated with the IP address when posting
 
 fof-default-user-preferences:
   admin:
