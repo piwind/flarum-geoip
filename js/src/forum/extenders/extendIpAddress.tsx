@@ -31,12 +31,12 @@ export default function extendIpAddress() {
 
       items.add(
         'copyButton',
-        <Tooltip text={app.translator.trans('fof-geoip.forum.copy_ip_label')}>
+        <Tooltip text={app.translator.trans('piwind-geoip.forum.copy_ip_label')}>
           <Button
             icon="fas fa-copy"
             className="Button Button--icon Button--link"
             onclick={handleCopyIP(this.ip)}
-            aria-label={app.translator.trans('fof-geoip.forum.copy_ip_label')}
+            aria-label={app.translator.trans('piwind-geoip.forum.copy_ip_label')}
           />
         </Tooltip>,
         95
@@ -44,7 +44,7 @@ export default function extendIpAddress() {
 
       items.add(
         'infoButton',
-        <Tooltip text={app.translator.trans('fof-geoip.forum.map_button_label')}>
+        <Tooltip text={app.translator.trans('piwind-geoip.forum.map_button_label')}>
           <Button
             icon="fas fa-info-circle"
             className="Button Button--icon Button--link"
@@ -52,7 +52,7 @@ export default function extendIpAddress() {
               e.stopPropagation();
               app.modal.show(MapModal, { ipInfo: this.ipInfo, ipAddr: this.ip });
             }}
-            aria-label={app.translator.trans('fof-geoip.forum.map_button_label')}
+            aria-label={app.translator.trans('piwind-geoip.forum.map_button_label')}
           />
         </Tooltip>,
         90

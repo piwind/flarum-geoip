@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Console;
+namespace Piwind\GeoIP\Console;
 
 use Flarum\Database\AbstractModel;
 use Flarum\Http\AccessToken;
 use Flarum\Post\Post;
 use FoF\Drafts\Draft;
-use FoF\GeoIP\Api\GeoIP;
-use FoF\GeoIP\Command\FetchIPInfo;
-use FoF\GeoIP\Command\FetchIPInfoBatch;
+use Piwind\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Command\FetchIPInfo;
+use Piwind\GeoIP\Command\FetchIPInfoBatch;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Bus\Dispatcher;
 
@@ -32,7 +32,7 @@ class LookupUnknownIPsCommand extends Command
         Draft::class       => 'ip_address',
     ];
 
-    protected $signature = 'fof:geoip:lookup {--force}';
+    protected $signature = 'piwind:geoip:lookup {--force}';
 
     protected $description = 'Look up IP addresses which have not been looked up before.';
 

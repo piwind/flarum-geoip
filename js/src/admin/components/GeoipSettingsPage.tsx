@@ -10,9 +10,9 @@ import linkify from 'linkify-lite';
 
 export default class GeoipSettingsPage extends ExtensionPage {
   content() {
-    const service = this.setting('fof-geoip.service')();
-    const errorTime = Number(app.data.settings[`fof-geoip.services.${service}.last_error_time`]) * 1000;
-    const error = app.data.settings[`fof-geoip.services.${service}.error`] as string | undefined;
+    const service = this.setting('piwind-geoip.service')();
+    const errorTime = Number(app.data.settings[`piwind-geoip.services.${service}.last_error_time`]) * 1000;
+    const error = app.data.settings[`piwind-geoip.services.${service}.error`] as string | undefined;
 
     return (
       <div className="GeoipSettingsPage">
@@ -40,8 +40,8 @@ export default class GeoipSettingsPage extends ExtensionPage {
     items.add(
       'general',
       <div className="Section">
-        <h3>{app.translator.trans('fof-geoip.admin.settings.general.heading')}</h3>
-        <p className="helpText">{app.translator.trans('fof-geoip.admin.settings.general.help')}</p>
+        <h3>{app.translator.trans('piwind-geoip.admin.settings.general.heading')}</h3>
+        <p className="helpText">{app.translator.trans('piwind-geoip.admin.settings.general.help')}</p>
         {this.generalItems().toArray()}
       </div>
     );
@@ -49,8 +49,8 @@ export default class GeoipSettingsPage extends ExtensionPage {
     items.add(
       'providers',
       <div className="Section">
-        <h3>{app.translator.trans('fof-geoip.admin.settings.providers.heading')}</h3>
-        <p className="helpText">{app.translator.trans('fof-geoip.admin.settings.providers.help')}</p>
+        <h3>{app.translator.trans('piwind-geoip.admin.settings.providers.heading')}</h3>
+        <p className="helpText">{app.translator.trans('piwind-geoip.admin.settings.providers.help')}</p>
         {this.providerItems().toArray()}
       </div>
     );
@@ -64,10 +64,10 @@ export default class GeoipSettingsPage extends ExtensionPage {
     items.add(
       'show-flags',
       this.buildSettingComponent({
-        setting: 'fof-geoip.showFlag',
+        setting: 'piwind-geoip.showFlag',
         type: 'boolean',
-        label: app.translator.trans('fof-geoip.admin.settings.show_flag_label'),
-        help: app.translator.trans('fof-geoip.admin.settings.show_flag_help'),
+        label: app.translator.trans('piwind-geoip.admin.settings.show_flag_label'),
+        help: app.translator.trans('piwind-geoip.admin.settings.show_flag_help'),
       })
     );
 
@@ -76,20 +76,20 @@ export default class GeoipSettingsPage extends ExtensionPage {
 
   providerItems(): ItemList<Mithril.Children> {
     const items = new ItemList<Mithril.Children>();
-    const service = this.setting('fof-geoip.service')();
+    const service = this.setting('piwind-geoip.service')();
 
     items.add(
       'service',
       this.buildSettingComponent({
         type: 'select',
-        setting: 'fof-geoip.service',
-        label: app.translator.trans('fof-geoip.admin.settings.service_label'),
-        options: (app.data['fof-geoip.services'] as string[]).reduce((o: { [x: string]: string }, p: string) => {
-          o[p] = extractText(app.translator.trans(`fof-geoip.admin.settings.service_${p}_label`));
+        setting: 'piwind-geoip.service',
+        label: app.translator.trans('piwind-geoip.admin.settings.service_label'),
+        options: (app.data['piwind-geoip.services'] as string[]).reduce((o: { [x: string]: string }, p: string) => {
+          o[p] = extractText(app.translator.trans(`piwind-geoip.admin.settings.service_${p}_label`));
           return o;
         }, {}),
         required: true,
-        help: service && m.trust(linkify(extractText(app.translator.trans(`fof-geoip.admin.settings.service_${service}_description`)))),
+        help: service && m.trust(linkify(extractText(app.translator.trans(`piwind-geoip.admin.settings.service_${service}_description`)))),
       })
     );
 
@@ -98,8 +98,8 @@ export default class GeoipSettingsPage extends ExtensionPage {
         'api-key',
         this.buildSettingComponent({
           type: 'string',
-          setting: `fof-geoip.services.${service}.access_key`,
-          label: app.translator.trans('fof-geoip.admin.settings.access_key_label'),
+          setting: `piwind-geoip.services.${service}.access_key`,
+          label: app.translator.trans('piwind-geoip.admin.settings.access_key_label'),
           required: true,
         })
       );
@@ -109,8 +109,8 @@ export default class GeoipSettingsPage extends ExtensionPage {
         'ipdata-quota',
         this.buildSettingComponent({
           type: 'number',
-          setting: 'fof-geoip.services.ipdata.quota',
-          label: app.translator.trans('fof-geoip.admin.settings.quota_label'),
+          setting: 'piwind-geoip.services.ipdata.quota',
+          label: app.translator.trans('piwind-geoip.admin.settings.quota_label'),
           min: 1500,
           placeholder: 1500,
         })

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api\Controller;
+namespace Piwind\GeoIP\Api\Controller;
 
 use Flarum\Api\Controller\AbstractShowController;
 use Flarum\Http\RequestUtil;
-use FoF\GeoIP\Api\GeoIP;
-use FoF\GeoIP\Api\Serializer\IPInfoSerializer;
-use FoF\GeoIP\Command\FetchIPInfo;
-use FoF\GeoIP\Model\IPInfo;
+use Piwind\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Api\Serializer\IPInfoSerializer;
+use Piwind\GeoIP\Command\FetchIPInfo;
+use Piwind\GeoIP\Model\IPInfo;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use Psr\Http\Message\ServerRequestInterface;

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Listeners;
+namespace Piwind\GeoIP\Listeners;
 
 use Flarum\Settings\Event\Saving;
 use Flarum\Settings\SettingsRepositoryInterface;
@@ -24,21 +24,21 @@ class RemoveErrorsOnSettingsUpdate
     public function handle(Saving $event)
     {
         foreach ($event->settings as $key => $value) {
-            if (!Str::startsWith($key, 'fof-geoip.service')) {
+            if (!Str::startsWith($key, 'piwind-geoip.service')) {
                 continue;
             }
 
             $service = $value;
 
-            if ($key !== 'fof-geoip.service') {
+            if ($key !== 'piwind-geoip.service') {
                 $matches = null;
-                preg_match('/fof-geoip\.services\.(.+?)\./m', $key, $matches);
+                preg_match('/piwind-geoip\.services\.(.+?)\./m', $key, $matches);
 
                 $service = $matches[1] ?? $value;
             }
 
-            $this->settings->delete("fof-geoip.services.$service.error");
-            $this->settings->delete("fof-geoip.services.$service.last_error_time");
+            $this->settings->delete("piwind-geoip.services.$service.error");
+            $this->settings->delete("piwind-geoip.services.$service.last_error_time");
         }
     }
 }

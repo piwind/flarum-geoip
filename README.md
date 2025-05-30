@@ -1,8 +1,12 @@
-# GeoIP by FriendsOfFlarum
+# GeoIP
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/fof/geoip.svg)](https://packagist.org/packages/fof/geoip) [![OpenCollective](https://img.shields.io/badge/opencollective-fof-blue.svg)](https://opencollective.com/fof/donate)  [![Donate](https://img.shields.io/badge/donate-datitisev-important.svg)](https://datitisev.me/donate)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/piwind/flarum-geoip.svg)](https://packagist.org/packages/piwind/flarum-geoip) [![Total Downloads](https://img.shields.io/packagist/dt/piwind/flarum-geoip.svg)](https://packagist.org/packages/piwind/flarum-geoip)
 
 A [Flarum](http://flarum.org) extension.
+
+## About This Fork
+
+This repository is a fork of [fof/geoip](https://github.com/FriendsOfFlarum/geoip).
 
 ## Empower Your Flarum Moderators with GeoIP
 
@@ -32,7 +36,7 @@ The following CLI commands are provided:
 Although IP addresses will be looked up when they are requested, this command will lookup all IP's that do not already have an entry in the `ip_info` table, using the currently selected provider.
 
 ```sh
-php flarum fof:geoip:lookup
+php flarum piwind:geoip:lookup
 ```
 
 #### `lookup --force`
@@ -40,7 +44,7 @@ php flarum fof:geoip:lookup
 You may also force a refresh of IP data using the currently selected provider.
 
 ```sh
-php flarum fof:geoip:lookup --force
+php flarum piwind:geoip:lookup --force
 ```
 
 ### Queue offloading
@@ -50,29 +54,26 @@ The IP lookup can be time consuming, so the lookup of an unknown IP address is d
 All IP address lookup jobs are dispatched to the `default` queue by default. If you have multiple queues, you can specify which queue to use for these jobs in your `extend.php`:
 
 ```
-FoF\GeoIP\Jobs\RetrieveIP::$onQueue = 'my-other-queue';
+Piwind\GeoIP\Jobs\RetrieveIP::$onQueue = 'my-other-queue';
 ```
 
-### Installation
+## Installation & Updating
 
 Install manually with composer:
 
 ```sh
-composer require fof/geoip:"*"
+composer require piwind/geoip:"*"
 ```
 
-### Updating
+Updating:
 
 ```sh
-composer update fof/geoip
+composer update piwind/geoip
 php flarum cache:clear
 ```
 
-### Links
+## Links
 
-[![OpenCollective](https://img.shields.io/badge/donate-friendsofflarum-44AEE5?style=for-the-badge&logo=open-collective)](https://opencollective.com/fof/donate) [![GitHub](https://img.shields.io/badge/donate-datitisev-ea4aaa?style=for-the-badge&logo=github)](https://datitisev.me/donate/github)
+- [Packagist](https://packagist.org/packages/piwind/flarum-geoip)
+- [GitHub](https://github.com/piwind/flarum-geoip)
 
-- [Packagist](https://packagist.org/packages/fof/geoip)
-- [GitHub](https://github.com/FriendsOfFlarum/geoip)
-
-An extension by [FriendsOfFlarum](https://github.com/FriendsOfFlarum).

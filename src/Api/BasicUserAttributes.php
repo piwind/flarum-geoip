@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api;
+namespace Piwind\GeoIP\Api;
 
 use Flarum\Api\Serializer\BasicUserSerializer;
 use Flarum\Settings\SettingsRepositoryInterface;
@@ -24,7 +24,7 @@ class BasicUserAttributes
 
     public function __invoke(BasicUserSerializer $serializer, User $user, array $attributes): array
     {
-        if ($this->settings->get('fof-geoip.showFlag')) {
+        if ($this->settings->get('piwind-geoip.showFlag')) {
             $attributes['showIPCountry'] = (bool) $user->getPreference('showIPCountry');
         }
 

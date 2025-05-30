@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Jobs;
+namespace Piwind\GeoIP\Jobs;
 
 use Flarum\Queue\AbstractJob;
-use FoF\GeoIP\Command\FetchIPInfo;
-use FoF\GeoIP\Model\IPInfo;
+use Piwind\GeoIP\Command\FetchIPInfo;
+use Piwind\GeoIP\Model\IPInfo;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Arr;
@@ -39,7 +39,7 @@ class RetrieveIP extends AbstractJob
     public function handle(Repository $cache, Dispatcher $bus): void
     {
         $ip = $this->ip;
-        $cacheKey = "fof-geoip.retrieving.$ip";
+        $cacheKey = "piwind-geoip.retrieving.$ip";
 
         // Return if 1) no IP, 2) already retrieving this IP, 3) already retrieved this IP, 4) already cached this IP
         if (!$ip || self::isRetrieving($ip) || Arr::has(static::$retrieved, $ip) || $cache->has($cacheKey)) {
@@ -56,7 +56,7 @@ class RetrieveIP extends AbstractJob
 
         if ($ipInfo->exists) {
             static::$retrieving = array_diff(static::$retrieving, [$ip]);
-            $cache->forget("fof-geoip.retrieving.$ip");
+            $cache->forget("piwind-geoip.retrieving.$ip");
         }
     }
 

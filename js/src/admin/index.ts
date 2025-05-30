@@ -4,15 +4,15 @@ import GeoipSettingsPage from './components/GeoipSettingsPage';
 export * from './components';
 export { default as extend } from './extend';
 
-app.initializers.add('fof/geoip', () => {
+app.initializers.add('piwind/geoip', () => {
   app.extensionData
-    .for('fof-geoip')
+    .for('piwind-geoip')
     .registerPage(GeoipSettingsPage)
     .registerPermission(
       {
         icon: 'fas fa-globe',
-        permission: 'fof-geoip.canSeeCountry',
-        label: app.translator.trans('fof-geoip.admin.permissions.see_country'),
+        permission: 'piwind-geoip.canSeeCountry',
+        label: app.translator.trans('piwind-geoip.admin.permissions.see_country'),
       },
       'moderate',
       50

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Command;
+namespace Piwind\GeoIP\Command;
 
-use FoF\GeoIP\Api\GeoIP;
-use FoF\GeoIP\Model\IPInfo;
-use FoF\GeoIP\Repositories\GeoIPRepository;
+use Piwind\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Model\IPInfo;
+use Piwind\GeoIP\Repositories\GeoIPRepository;
 use Psr\Log\LoggerInterface;
 
 class FetchIPInfoHandler

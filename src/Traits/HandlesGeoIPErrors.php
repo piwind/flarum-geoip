@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Traits;
+namespace Piwind\GeoIP\Traits;
 
-use FoF\GeoIP\Api\ServiceResponse;
+use Piwind\GeoIP\Api\ServiceResponse;
 
 trait HandlesGeoIPErrors
 {

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api\Serializer;
+namespace Piwind\GeoIP\Api\Serializer;
 
-use FoF\GeoIP\Model\IPInfo;
+use Piwind\GeoIP\Model\IPInfo;
 
 class IPInfoSerializer extends BasicIPInfoSerializer
 {

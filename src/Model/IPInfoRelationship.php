@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Model;
+namespace Piwind\GeoIP\Model;
 
 use Flarum\Post\Post;
-use FoF\GeoIP\Repositories\GeoIPRepository;
+use Piwind\GeoIP\Repositories\GeoIPRepository;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class IPInfoRelationship

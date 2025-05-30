@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api;
+namespace Piwind\GeoIP\Api;
 
 use Carbon\Carbon;
 use Flarum\Settings\SettingsRepositoryInterface;
-use FoF\GeoIP\Concerns\ServiceInterface;
-use FoF\GeoIP\Model\IPInfo;
-use FoF\GeoIP\Traits\HandlesGeoIPErrors;
+use Piwind\GeoIP\Concerns\ServiceInterface;
+use Piwind\GeoIP\Model\IPInfo;
+use Piwind\GeoIP\Traits\HandlesGeoIPErrors;
 
 class GeoIP
 {
@@ -29,7 +29,7 @@ class GeoIP
         'ipsevenex'  => Services\IPSevenEx::class,
     ];
 
-    private $prefix = 'fof-geoip.services';
+    private $prefix = 'piwind-geoip.services';
 
     public function __construct(protected SettingsRepositoryInterface $settings)
     {
@@ -37,7 +37,7 @@ class GeoIP
 
     public function getService(): ?ServiceInterface
     {
-        $serviceName = $this->settings->get('fof-geoip.service');
+        $serviceName = $this->settings->get('piwind-geoip.service');
         $service = self::$services[$serviceName] ?? null;
 
         if (!$service) {
@@ -81,7 +81,7 @@ class GeoIP
 
     protected function checkErrors(): ?ServiceResponse
     {
-        $serviceName = $this->settings->get('fof-geoip.service');
+        $serviceName = $this->settings->get('piwind-geoip.service');
         $service = self::$services[$serviceName] ?? null;
 
         if (!$service) {
@@ -106,8 +106,8 @@ class GeoIP
     {
         $settings = resolve('flarum.settings');
 
-        $settings->set("fof-geoip.services.$service.last_error_time", time());
-        $settings->set("fof-geoip.services.$service.error", $error);
+        $settings->set("piwind-geoip.services.$service.last_error_time", time());
+        $settings->set("piwind-geoip.services.$service.error", $error);
 
         return self::getFakeResponse($service, $error);
     }

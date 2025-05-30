@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP;
+namespace Piwind\GeoIP;
 
 use Flarum\Api\Controller;
 use Flarum\Api\Serializer\BasicUserSerializer;
@@ -19,7 +19,7 @@ use Flarum\Extend;
 use Flarum\Frontend\Document;
 use Flarum\Post\Post;
 use Flarum\Settings\Event\Saving;
-use FoF\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Api\GeoIP;
 
 return [
     (new Extend\Frontend('forum'))
@@ -30,7 +30,7 @@ return [
         ->js(__DIR__.'/js/dist/admin.js')
         ->css(__DIR__.'/resources/less/admin.less')
         ->content(function (Document $document) {
-            $document->payload['fof-geoip.services'] = array_keys(GeoIP::$services);
+            $document->payload['piwind-geoip.services'] = array_keys(GeoIP::$services);
         }),
 
     (new Extend\Model(Post::class))
@@ -61,12 +61,12 @@ return [
         ->addInclude('posts.ip_info'),
 
     (new Extend\Settings())
-        ->default('fof-geoip.service', 'ipapi')
-        ->default('fof-geoip.showFlag', false)
-        ->serializeToForum('fof-geoip.showFlag', 'fof-geoip.showFlag', 'boolval'),
+        ->default('piwind-geoip.service', 'ipapi')
+        ->default('piwind-geoip.showFlag', false)
+        ->serializeToForum('piwind-geoip.showFlag', 'piwind-geoip.showFlag', 'boolval'),
 
     (new Extend\Routes('api'))
-        ->get('/ip_info/{ip}', 'fof-geoip.api.ip_info', Api\Controller\ShowIpInfoController::class),
+        ->get('/ip_info/{ip}', 'piwind-geoip.api.ip_info', Api\Controller\ShowIpInfoController::class),
 
     (new Extend\Console())
         ->command(Console\LookupUnknownIPsCommand::class),

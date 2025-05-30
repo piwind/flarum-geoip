@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -16,7 +16,7 @@ return [
         $db = $schema->getConnection();
 
         $db->table('settings')
-            ->where('key', 'fof-geoip.service')
+            ->where('key', 'piwind-geoip.service')
             ->where('value', 'ipstack')
             ->delete();
     },

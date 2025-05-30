@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Tests\integration\Api;
+namespace Piwind\GeoIP\Tests\integration\Api;
 
 use Carbon\Carbon;
 use Flarum\Testing\integration\RetrievesAuthorizedUsers;
@@ -23,7 +23,7 @@ class NullIPTest extends TestCase
     {
         parent::setUp();
 
-        $this->extension('fof-geoip');
+        $this->extension('piwind-geoip');
 
         $this->prepareDatabase([
             'users' => [

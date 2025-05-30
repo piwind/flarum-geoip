@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Listeners;
+namespace Piwind\GeoIP\Listeners;
 
 use Flarum\Post\Event\Saving as PostSaving;
-use FoF\GeoIP\Jobs;
-use FoF\GeoIP\Repositories\GeoIPRepository;
+use Piwind\GeoIP\Jobs;
+use Piwind\GeoIP\Repositories\GeoIPRepository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Queue\Queue;
 

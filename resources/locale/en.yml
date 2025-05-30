@@ -1,4 +1,4 @@
-fof-geoip:
+piwind-geoip:
   admin:
     permissions:
       see_country: Always display the country of the IP address

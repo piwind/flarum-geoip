@@ -7,7 +7,7 @@ import { getIPData } from '../helpers/IPDataHelper';
 
 export default function extendCommentPost() {
   extend(CommentPost.prototype, 'headerItems', function (items: ItemList<Mithril.Children>) {
-    if (app.forum.attribute<boolean>('fof-geoip.showFlag')) {
+    if (app.forum.attribute<boolean>('piwind-geoip.showFlag')) {
       const ipInfo = this.attrs.post.ip_info?.();
       const postUser = this.attrs.post.user();
       if ((ipInfo && postUser && postUser.showIPCountry()) || app.session.user?.canSeeCountry?.()) {

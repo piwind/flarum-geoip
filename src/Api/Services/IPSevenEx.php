@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api\Services;
+namespace Piwind\GeoIP\Api\Services;
 
-use FoF\GeoIP\Api\GeoIP;
-use FoF\GeoIP\Api\ServiceResponse;
+use Piwind\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Api\ServiceResponse;
 use Psr\Http\Message\ResponseInterface;
 
 class IPSevenEx extends BaseGeoService
 {
     protected $host = 'https://api.7x.ax';
-    protected $settingPrefix = 'fof-geoip.services.ipsevenex';
+    protected $settingPrefix = 'piwind-geoip.services.ipsevenex';
 
     public function isRateLimited(): bool
     {

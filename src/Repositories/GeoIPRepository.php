@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Repositories;
+namespace Piwind\GeoIP\Repositories;
 
 use Flarum\Post\Post;
-use FoF\GeoIP\Api\GeoIP;
-use FoF\GeoIP\Jobs\RetrieveIP;
-use FoF\GeoIP\Model\IPInfo;
+use Piwind\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Jobs\RetrieveIP;
+use Piwind\GeoIP\Model\IPInfo;
 use Illuminate\Contracts\Queue\Queue;
 use Illuminate\Support\Arr;
 

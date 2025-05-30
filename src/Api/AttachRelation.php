@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api;
+namespace Piwind\GeoIP\Api;
 
 use Flarum\Api\Serializer\PostSerializer;
 use Flarum\Post\Post;
 use Flarum\Settings\SettingsRepositoryInterface;
-use FoF\GeoIP\Api\Serializer\BasicIPInfoSerializer;
-use FoF\GeoIP\Api\Serializer\IPInfoSerializer;
+use Piwind\GeoIP\Api\Serializer\BasicIPInfoSerializer;
+use Piwind\GeoIP\Api\Serializer\IPInfoSerializer;
 use Tobscure\JsonApi\Relationship;
 
 class AttachRelation
@@ -33,8 +33,8 @@ class AttachRelation
             return $serializer->hasOne($post, IPInfoSerializer::class, 'ip_info');
         }
 
-        $viewCountry = $serializer->getActor()->can('fof-geoip.canSeeCountry');
-        $showFlagsFeatureEnabled = $this->settings->get('fof-geoip.showFlag');
+        $viewCountry = $serializer->getActor()->can('piwind-geoip.canSeeCountry');
+        $showFlagsFeatureEnabled = $this->settings->get('piwind-geoip.showFlag');
         $userPreference = $post->user?->getPreference('showIPCountry');
 
         if ($viewCountry || ($showFlagsFeatureEnabled && $userPreference)) {

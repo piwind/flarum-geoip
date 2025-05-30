@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api\Services;
+namespace Piwind\GeoIP\Api\Services;
 
 use Carbon\Carbon;
-use FoF\GeoIP\Api\GeoIP;
-use FoF\GeoIP\Api\ServiceResponse;
+use Piwind\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Api\ServiceResponse;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Psr\Http\Message\ResponseInterface;
@@ -21,7 +21,7 @@ use Psr\Http\Message\ResponseInterface;
 class IPData extends BaseGeoService
 {
     protected $host = 'https://api.ipdata.co';
-    protected $settingPrefix = 'fof-geoip.services.ipdata';
+    protected $settingPrefix = 'piwind-geoip.services.ipdata';
 
     /**
      * 1500 lookups per day, on the free plan.

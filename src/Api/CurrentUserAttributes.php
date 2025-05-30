@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api;
+namespace Piwind\GeoIP\Api;
 
 use Flarum\Api\Serializer\CurrentUserSerializer;
 use Flarum\User\User;
@@ -18,7 +18,7 @@ class CurrentUserAttributes
 {
     public function __invoke(CurrentUserSerializer $serializer, User $user, array $attributes): array
     {
-        if ($serializer->getActor()->can('fof-geoip.canSeeCountry')) {
+        if ($serializer->getActor()->can('piwind-geoip.canSeeCountry')) {
             $attributes['canSeeCountry'] = true;
         }
 

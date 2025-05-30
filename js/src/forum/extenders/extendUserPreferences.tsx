@@ -5,7 +5,7 @@ import Switch from 'flarum/common/components/Switch';
 
 export default function extendUserPreferences() {
   extend(SettingsPage.prototype, 'privacyItems', function (items) {
-    if (app.forum.attribute<boolean>('fof-geoip.showFlag')) {
+    if (app.forum.attribute<boolean>('piwind-geoip.showFlag')) {
       items.add(
         'ip-country',
         Switch.component(
@@ -21,7 +21,7 @@ export default function extendUserPreferences() {
             },
             loading: this.showIPCountryLoading,
           },
-          app.translator.trans('fof-geoip.forum.user.settings.ip_country')
+          app.translator.trans('piwind-geoip.forum.user.settings.ip_country')
         )
       );
     }

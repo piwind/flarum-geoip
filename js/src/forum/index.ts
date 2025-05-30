@@ -8,7 +8,7 @@ export { default as extend } from './extend';
 export * from './components';
 export * from './models';
 
-app.initializers.add('fof/geoip', () => {
+app.initializers.add('piwind/geoip', () => {
   extendBanIPModal();
   extendCommentPost();
   extendUserPreferences();

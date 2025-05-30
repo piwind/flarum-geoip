@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api\Services;
+namespace Piwind\GeoIP\Api\Services;
 
 use Flarum\Settings\SettingsRepositoryInterface;
-use FoF\GeoIP\Api\ServiceResponse;
-use FoF\GeoIP\Concerns\ServiceInterface;
+use Piwind\GeoIP\Api\ServiceResponse;
+use Piwind\GeoIP\Concerns\ServiceInterface;
 use GuzzleHttp\Client;
 use Illuminate\Contracts\Cache\Repository as Cache;
 use Psr\Http\Message\ResponseInterface;

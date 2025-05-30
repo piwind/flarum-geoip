@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of fof/geoip.
+ * This file is part of geoip.
  *
  * Copyright (c) FriendsOfFlarum.
  *
@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace FoF\GeoIP\Api\Services;
+namespace Piwind\GeoIP\Api\Services;
 
 use Carbon\Carbon;
-use FoF\GeoIP\Api\GeoIP;
-use FoF\GeoIP\Api\ServiceResponse;
+use Piwind\GeoIP\Api\GeoIP;
+use Piwind\GeoIP\Api\ServiceResponse;
 use Psr\Http\Message\ResponseInterface;
 
 class IPApi extends BaseGeoService
 {
     protected $host = 'http://ip-api.com';
-    protected $settingPrefix = 'fof-geoip.services.ipapi';
+    protected $settingPrefix = 'piwind-geoip.services.ipapi';
     protected $requestFields = 'status,message,countryCode,region,regionName,city,zip,lat,lon,isp,org,as,mobile,query';
     protected $r2 = '126718';
 
