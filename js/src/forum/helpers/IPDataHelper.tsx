@@ -26,7 +26,7 @@ export const getFlagImage = (ipInfo: IPInfo) => {
     if (url) {
       return (
         <Tooltip text={countryName}>
-          <img src={url} alt={countryName} height="16" loading="lazy" />
+          <img src={url} alt={countryName} height="19" loading="lazy" />
         </Tooltip>
       );
     }
